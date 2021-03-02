@@ -16,8 +16,8 @@ phases:
         - export KUBECONFIG=$HOME/.kube/config
   build:
     commands:
-      - aws s3 cp s3://phl-eksworkshop-bucket/.docker.key .docker.key
-      - docker login -u odusseos2017 --password-stdin < .docker.key
+      - aws s3 cp s3://phl-eksworkshop-bucket/.mykey.key .mykey.key
+      - docker login -u my-username --password-stdin < mykey.key
       - rm .docker.key
       - docker build --tag $REPOSITORY_URI:$TAG .
 
